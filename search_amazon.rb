@@ -14,7 +14,7 @@ class Mechanize
       end
 
       def search(key_word)
-        @search_result = @mechanize.get("#{SEARCH_URL}#{URI.escape(key_word)}"))
+        @search_result = @mechanize.get("#{SEARCH_URL}#{URI.escape(key_word)}")
 
         @search_result = @limit.map do |i|
           product = search_result.css("li#result_#{i}")
