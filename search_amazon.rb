@@ -16,6 +16,8 @@ class Mechanize
       def search(key_word)
         @search_result = @mechanize.get("#{SEARCH_URL}#{URI.escape(key_word)}")
 
+        raise 'No Results Found' unless @search_result.css('h1#noResultsTitle').size.zero?
+
         @search_result = @limit.map do |i|
           product = search_result.css("li#result_#{i}")
 
