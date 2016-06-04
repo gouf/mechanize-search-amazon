@@ -13,6 +13,11 @@ class Mechanize
 
       def search(key_word)
         @search_result = @mechanize.get("#{SEARCH_URL}#{URI.escape(key_word)}"))
+
+      private
+
+      def title(search_result)
+        search_result.css('h2').first.text
       end
     end
   end
