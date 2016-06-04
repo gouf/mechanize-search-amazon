@@ -12,8 +12,7 @@ class Mechanize
       end
 
       def search(key_word)
-        search_result = @mechanize.get("#{SEARCH_URL}#{URI.escape(key_word)}")
-        @search_result = search_result
+        @search_result = @mechanize.get("#{SEARCH_URL}#{URI.escape(key_word)}"))
       end
     end
   end
