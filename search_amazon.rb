@@ -29,6 +29,15 @@ class Mechanize
                                     .to_s
         "#{AMAZON_JP_URL}#{product_code}"
       end
+
+      def price(search_result)
+        search_result.css('span.s-price')
+                     .first
+                     .text
+                     .gsub(/[￥,]/, '')
+                     .strip
+                     .to_i
+      end
     end
   end
 end
