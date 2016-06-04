@@ -7,7 +7,9 @@ class Mechanize
       AMAZON_JP_URL = 'http://www.amazon.co.jp'.freeze
       SEARCH_URL = "#{AMAZON_JP_URL}/gp/search?field-keywords=".freeze
 
-      def initialize
+      def initialize(limit = 10)
+        raise 'Not a correct number (n < 0)' if limit.to_i < 0
+        @limit = (0..limit).to_a
         @mechanize = Mechanize.new
       end
 
