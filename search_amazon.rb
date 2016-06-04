@@ -19,6 +19,16 @@ class Mechanize
       def title(search_result)
         search_result.css('h2').first.text
       end
+
+      def href(search_result)
+        product_code = search_result.css('a.s-access-detail-page')
+                                    .first
+                                    .attributes['href']
+                                    .value
+                                    .match(%r{/dp/\d+})
+                                    .to_s
+        "#{AMAZON_JP_URL}#{product_code}"
+      end
     end
   end
 end
