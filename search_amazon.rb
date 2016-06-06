@@ -9,7 +9,7 @@ class Mechanize
 
       def initialize(limit = 10)
         raise 'Not a correct number (n < 0)' if limit.to_i < 0
-        @limit = (0..limit).to_a
+        @limit = (0...limit).to_a
         @mechanize = Mechanize.new
       end
 
