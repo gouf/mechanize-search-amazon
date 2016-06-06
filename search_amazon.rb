@@ -2,7 +2,7 @@ require 'mechanize'
 require 'uri'
 
 class Mechanize
-  module AmazonSearch
+  module AmazonJpSearch
     class Client
       AMAZON_JP_URL = 'http://www.amazon.co.jp'.freeze
       SEARCH_URL = "#{AMAZON_JP_URL}/gp/search?field-keywords=".freeze
