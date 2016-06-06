@@ -40,9 +40,6 @@ class Mechanize
                                     .first
                                     .attributes['href']
                                     .value
-                                    .match(%r{/dp/\d+})
-                                    .to_s
-        "#{AMAZON_JP_URL}#{product_code}"
       end
 
       def price(search_result)
